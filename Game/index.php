@@ -50,6 +50,7 @@
     <script src="src/RocketLauncher.js"></script>
     <script src="src/Silo.js"></script>
     <script src="src/Game.js"></script>
+	<script src="js/gamecontroller.js"></script>
 </head>
 <body>
 
