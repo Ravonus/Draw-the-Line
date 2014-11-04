@@ -1,6 +1,6 @@
 
 MissileCommand.Game = function (game) {
-
+var head
 
 };
 
@@ -9,11 +9,15 @@ MissileCommand.Game.prototype = {
 	create: function () {
 	
 
+		this.add.tileSprite(0, 0, 4280, 4280, 'background');
 
+		this.world.setBounds(0, 0, 4280, 4280);
         this.add.image(0, 0, 'sky');
-		head = this.game.add.sprite(250, 250, 'pen');
-		this.physics.enable(head, Phaser.Physics.ARCADE);
-		head.body.velocity.x=150;
+		this.physics.startSystem(Phaser.Physics.P2JS);
+		head = this.add.sprite(this.world.centerX, this.world.centerY, 'pen');
+		this.physics.p2.enable(head);
+		this.camera.follow(head);
+		//head.body.velocity.x=150;
 		
 		//this.input.onDown.add(this.addjs, this);
       //  this.input.onUp.add(this.jump2, this);
@@ -25,17 +29,13 @@ MissileCommand.Game.prototype = {
 
 	update: function () {
 
-    if (this.input.mousePointer.isDown)
+    if (this.input.pointer1.isDown)
     {
         //  400 is the speed it will move towards the mouse
-        this.physics.arcade.moveToPointer(head, 400);
+        this.physics.arcade.moveToPointer(head, 200);
 
         //  if it's overlapping the mouse, don't move any more
     }
-    else
-    {
-        head.body.velocity.x=150;
-    }	
 	    
 		
 	},

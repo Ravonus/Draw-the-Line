@@ -36,8 +36,8 @@
     <link rel="apple-touch-icon" sizes="1024x1024" href="icons/app_icon_1024x1024.png">
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
     <?php
-        $path = '../';
-        require('../build/config.php');
+        $path = '127.0.0.1/draw-the-line';
+        require('build/config.php');
     ?>
     <script src="src/Boot.js"></script>
     <script src="src/Preloader.js"></script>
@@ -50,7 +50,6 @@
     <script src="src/RocketLauncher.js"></script>
     <script src="src/Silo.js"></script>
     <script src="src/Game.js"></script>
-	<script src="js/gamecontroller.js"></script>
 </head>
 <body>
 
