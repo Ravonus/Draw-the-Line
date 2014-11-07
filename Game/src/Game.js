@@ -1,10 +1,14 @@
 
+
+
 dtl.Game = function (game) {
 var head
 var lineLength = 5;
 var food = {};
 var velocity = 100;
 var t1
+var player = player;
+var input = input;
 
 };
 
@@ -35,12 +39,41 @@ dtl.Game.prototype = {
 	  
 	  
 	  
+	  
+	  
 
 	},
 
 	update: function () {
+	
+		 Line = function (index, game, player) {
+		 
+    this.cursor = {
+        move:false,
+        shield:false,
+        fire:false        
+    }
+ 
+    this.input = {
+        move:false,
+        shield:false,
+        fire:false   
+    }
+	
+			 	player = this.player;
+			    input = this.input;
+    player.input.up = game.input.isDown;
+	player.input.up2 = game.input.pointer1.isDown;
+    player.input.fire = game.input.activePointer.isDown;
+    player.input.tx = game.input.x+ game.camera.x;
+    player.input.ty = game.input.y+ game.camera.y
+	
 
-    if (this.input.pointer1.isDown)
+
+
+	   }; 
+	
+		    if (this.input.pointer1.isDown)
     {
         //  400 is the speed it will move towards the mouse
         this.physics.arcade.moveToPointer(head, 200);
@@ -48,7 +81,6 @@ dtl.Game.prototype = {
 
         //  if it's overlapping the mouse, don't move any more
     }
-	    
 		
 	},
 	
