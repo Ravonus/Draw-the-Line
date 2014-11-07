@@ -58,10 +58,10 @@
 
     var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game');
 
-    game.state.add('Boot', MissileCommand.Boot);
-    game.state.add('Preloader', MissileCommand.Preloader);
-    game.state.add('MainMenu', MissileCommand.MainMenu);
-    game.state.add('Game', MissileCommand.Game);
+    game.state.add('Boot', dtl.Boot);
+    game.state.add('Preloader', dtl.Preloader);
+    game.state.add('MainMenu', dtl.MainMenu);
+    game.state.add('Game', dtl.Game);
 
     game.state.start('Boot');
 

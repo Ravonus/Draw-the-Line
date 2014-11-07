@@ -1,12 +1,12 @@
 
-MissileCommand.MainMenu = function (game) {
+dtl.MainMenu = function (game) {
 
 	this.music = null;
 	this.playButton = null;
 
 };
 
-MissileCommand.MainMenu.prototype = {
+dtl.MainMenu.prototype = {
 
 	create: function () {
 

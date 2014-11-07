@@ -1,5 +1,5 @@
 
-MissileCommand.Game = function (game) {
+dtl.Game = function (game) {
 var head
 var lineLength = 5;
 var food = {};
@@ -8,7 +8,7 @@ var t1
 
 };
 
-MissileCommand.Game.prototype = {
+dtl.Game.prototype = {
 
 	create: function () {
 		

@@ -1,18 +1,83 @@
-	var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
- 
-	function preload() {
- 
-		game.load.image('logo', 'bin/logo.png');
- 
-	}
- 
-	var logo;
- 
-	function create() {
- 
-		logo = game.add.sprite(0, 0, 'logo');
- 
-	}
- 
-	function update() {
-	}
+dtl = {
+
+    /* Here we've just got some global level vars that persist regardless of State swaps */
+    score: 0,
+
+    /* If the music in your game needs to play through-out a few State swaps, then you could reference it here */
+    music: null,
+
+    /* Your game can check dtl.orientated in internal loops to know if it should pause or not */
+    orientated: false
+
+};
+
+dtl.Boot = function (game) {
+};
+
+dtl.Boot.prototype = {
+
+    preload: function () {
+
+        this.load.image('preloaderBar', 'images/preload.png');
+
+    },
+
+    create: function () {
+
+        this.input.maxPointers = 1;
+        this.stage.disableVisibilityChange = true;
+
+        if (this.game.device.desktop)
+        {
+            this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+			//this.scale.setShowAll();
+            this.scale.minWidth = 320;
+            this.scale.minHeight = 240;
+            this.scale.maxWidth = 1024;
+            this.scale.maxHeight = 768;
+            this.scale.pageAlignHorizontally = true;
+            this.scale.pageAlignVertically = true;
+
+
+        }
+        else
+        {
+            this.scale.scaleMode = Phaser.ScaleManager.EXACT_FIT;
+			this.scale.setShowAll();
+            this.scale.minWidth = 480;
+            this.scale.minHeight = 260;
+            this.scale.maxWidth = 1024;
+            this.scale.maxHeight = 768;
+            this.scale.pageAlignHorizontally = true;
+            this.scale.pageAlignVertically = true;
+            this.scale.forceOrientation(true, false);
+            this.scale.setResizeCallback(this.gameResized, this);
+            this.scale.enterIncorrectOrientation.add(this.enterIncorrectOrientation, this);
+            this.scale.leaveIncorrectOrientation.add(this.leaveIncorrectOrientation, this);
+
+        }
+
+        this.state.start('Preloader');
+
+    },
+
+    gameResized: function (width, height) {
+    },
+
+    enterIncorrectOrientation: function () {
+
+        dtl.orientated = false;
+
+        document.getElementById('orientation').style.display = 'block';
+
+    },
+
+    leaveIncorrectOrientation: function () {
+
+        dtl.orientated = true;
+
+        document.getElementById('orientation').style.display = 'none';
+
+    }
+
+};

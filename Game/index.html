@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Phaser - Missile Command</title>
+    <title>Draw The Line</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1, IE=9">
     <meta name="format-detection" content="telephone=no">
@@ -62,10 +62,10 @@
 
     var game = new Phaser.Game(1080, 1920, Phaser.AUTO, 'game');
 
-    game.state.add('Boot', MissileCommand.Boot);
-    game.state.add('Preloader', MissileCommand.Preloader);
-    game.state.add('MainMenu', MissileCommand.MainMenu);
-    game.state.add('Game', MissileCommand.Game);
+    game.state.add('Boot', dtl.Boot);
+    game.state.add('Preloader', dtl.Preloader);
+    game.state.add('MainMenu', dtl.MainMenu);
+    game.state.add('Game', dtl.Game);
 
     game.state.start('Boot');
 

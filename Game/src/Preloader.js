@@ -1,5 +1,5 @@
 
-MissileCommand.Preloader = function (game) {
+dtl.Preloader = function (game) {
 
 	this.background = null;
 	this.preloadBar = null;
@@ -8,7 +8,7 @@ MissileCommand.Preloader = function (game) {
 
 };
 
-MissileCommand.Preloader.prototype = {
+dtl.Preloader.prototype = {
 
 	preload: function () {
 
