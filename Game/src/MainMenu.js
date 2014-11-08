@@ -9,6 +9,7 @@ dtl.MainMenu = function (game) {
 dtl.MainMenu.prototype = {
 
 	create: function () {
+	if (!ready) return;
 
 		// this.music = this.add.audio('titleMusic');
 		// this.music.play();
@@ -22,10 +23,12 @@ dtl.MainMenu.prototype = {
 	},
 
 	update: function () {
+	if (!ready) return;
 
 	},
 
 	startGame: function (pointer) {
+	
 
 		// this.music.stop();
 

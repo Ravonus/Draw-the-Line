@@ -35,7 +35,7 @@
     <link rel="apple-touch-icon" sizes="512x512" href="icons/app_icon_512x512.png">
     <link rel="apple-touch-icon" sizes="1024x1024" href="icons/app_icon_1024x1024.png">
     <link rel="stylesheet" href="css/stylesheet.css" type="text/css" charset="utf-8" />
-	<script src="/eureca.js"></script>
+	<script src="/eureca.js/"></script>
 	<script src="../build/phaser.min.js"></script>
     <script src="src/Boot.js"></script>
     <script src="src/Preloader.js"></script>
@@ -56,6 +56,7 @@
 
     game.state.add('Boot', dtl.Boot);
     game.state.add('Preloader', dtl.Preloader);
+	game.state.add('eurecaClientSetup', eurecaClientSetup);
     game.state.add('MainMenu', dtl.MainMenu);
     game.state.add('Game', dtl.Game);
 
